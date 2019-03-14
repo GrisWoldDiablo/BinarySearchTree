@@ -8,11 +8,11 @@ namespace _12_March_2019_BinarySearchTree
 {
     class Program
     {
-        static Random rand = new Random(2019);
+        static Random rand = new Random((int)DateTime.Now.Ticks);
         static List<int> numberList = new List<int>();
         static void Main(string[] args)
         {
-            BST<int> myTree= new BST<int>();
+            //BST<int> myTree= new BST<int>();
             //myTree.InsertValue(10);
             //myTree.InsertValue(5);
             //myTree.InsertValue(20);
@@ -20,62 +20,99 @@ namespace _12_March_2019_BinarySearchTree
             //myTree.InsertValue(4);
             //myTree.InsertValue(15);
             //myTree.InsertValue(31);
+            //int h = rand.Next(10, 20);
+            //for (int i = 0; i < h; i++)
+            //{
+            //    int v = rand.Next(100);
+            //    myTree.InsertValue(v);
+            //    Console.Write($"{v}, ");
+            //}
+            //Console.WriteLine();
+            //Console.WriteLine("IN ORDER");
+            //myTree.InOrder();
+            //Console.WriteLine();
+            //Console.WriteLine("LEVEL ORDER");
+            //myTree.LevelOrder();
+            //Console.WriteLine();
+            //Console.WriteLine($"Height: {myTree.GetHeight()}");
+            //Console.WriteLine();
+            //var foundNode = myTree.SearchTree(15);
+            //if (foundNode != null)
+            //{
+            //    Console.WriteLine(foundNode.key);
+            //}
+            //Console.WriteLine();
+            //int value = 93;
+            //foundNode = myTree.SearchTree(value);
+            //if (foundNode != null)
+            //{
+            //    Console.WriteLine($"Successor of {value} : { myTree.SearchTree(value).GetSuccessor().key}");
+            //}
+            //value = rand.Next(34);
+            //foundNode = myTree.SearchTree(value);
+
+            //if (foundNode != null)
+            //{
+            //    Console.WriteLine($"Delete {value}");
+            //    myTree.DeleteNode(foundNode);
+            //}
+
+            //Console.WriteLine("IN ORDER");
+            //myTree.InOrder();
+            //Console.WriteLine();
+            //Console.WriteLine("POST ORDER");
+            //myTree.PostOrder();
+            //Console.WriteLine();
+            //Console.WriteLine("PRE ORDER");
+            //myTree.PreOrder();
+            //Console.WriteLine();
+            //Console.WriteLine("LEVEL ORDER");
+            //myTree.LevelOrder();
+            //Console.WriteLine($"Height: {myTree.GetHeight()}");
+
+            //Shuffle(myTree.nodes);
+            //foreach (var item in myTree.nodes)
+            //{
+            //    Console.Write($"{item},");
+            //}
+            //Console.WriteLine();
+
+            var myRBTree = new RBT<int>();
+            myRBTree.InsertValue(32);
+            myRBTree.InsertValue(31);
+            myRBTree.InsertValue(30);
+            myRBTree.InsertValue(20);
+            myRBTree.InsertValue(15);
+            myRBTree.InsertValue(10);
+            myRBTree.InsertValue(5);
+            myRBTree.InsertValue(4);
+            myRBTree.InsertValue(2);
+            myRBTree.InsertValue(1);
+            myRBTree.InOrder();
+            myRBTree.LevelOrder();
+            myRBTree.PreOrder();
+            myRBTree.PostOrder();
+            myRBTree = new RBT<int>();
+            var myBSTree = new BST<int>();
             int h = rand.Next(10, 20);
-            for (int i = 0; i < h; i++)
+            for (int i = 0; i < 50; i++)
             {
                 int v = rand.Next(100);
-                myTree.InsertValue(v);
+                myRBTree.InsertValue(v);
+                myBSTree.InsertValue(v);
                 Console.Write($"{v}, ");
             }
             Console.WriteLine();
-            Console.WriteLine("IN ORDER");
-            myTree.InOrder();
-            Console.WriteLine();
-            Console.WriteLine("LEVEL ORDER");
-            myTree.LevelOrder();
-            Console.WriteLine();
-            Console.WriteLine($"Height: {myTree.GetHeight()}");
-            Console.WriteLine();
-            var foundNode = myTree.SearchTree(15);
-            if (foundNode != null)
-            {
-                Console.WriteLine(foundNode.key);
-            }
-            Console.WriteLine();
-            int value = 93;
-            foundNode = myTree.SearchTree(value);
-            if (foundNode != null)
-            {
-                Console.WriteLine($"Successor of {value} : { myTree.SearchTree(value).GetSuccessor().key}");
-            }
-            value = rand.Next(34);
-            foundNode = myTree.SearchTree(value);
+            Console.WriteLine("RBT");
 
-            if (foundNode != null)
-            {
-                Console.WriteLine($"Delete {value}");
-                myTree.DeleteNode(foundNode);
-            }
-            
-            Console.WriteLine("IN ORDER");
-            myTree.InOrder();
-            Console.WriteLine();
-            Console.WriteLine("POST ORDER");
-            myTree.PostOrder();
-            Console.WriteLine();
-            Console.WriteLine("PRE ORDER");
-            myTree.PreOrder();
-            Console.WriteLine();
-            Console.WriteLine("LEVEL ORDER");
-            myTree.LevelOrder();
-            Console.WriteLine($"Height: {myTree.GetHeight()}");
-
-            Shuffle(myTree.nodes);
-            foreach (var item in myTree.nodes)
-            {
-                Console.Write($"{item},");
-            }
-            Console.WriteLine();
+            myRBTree.InOrder();
+            myRBTree.LevelOrder();
+            myRBTree.PreOrder();
+            myRBTree.PostOrder();
+            Console.WriteLine("BST");
+            myBSTree.LevelOrder();
+            myBSTree.PreOrder();
+            myBSTree.PostOrder();
         }
 
         private static void Shuffle(List<int> numbers)

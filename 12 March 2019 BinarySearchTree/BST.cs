@@ -9,7 +9,8 @@ namespace _12_March_2019_BinarySearchTree
     public class BST<T> where T : IComparable
     {
         public Node<T> root;
-        public List<T> nodes = null;
+        public static List<T> nodes = null;
+
         public BST()
         {
             this.root = null;
@@ -104,18 +105,9 @@ namespace _12_March_2019_BinarySearchTree
 
         public void InOrder()
         {
-            nodes = new List<T>();
+            BST<T>.nodes = new List<T>();
             InOrder(root);
-        }
-
-        public void PostOrder()
-        {
-            PostOrder(root);
-        }
-
-        public void PreOrder()
-        {
-            PreOrder(root);
+            Console.WriteLine();
         }
 
         private void InOrder(Node<T> root)
@@ -129,22 +121,34 @@ namespace _12_March_2019_BinarySearchTree
             }
         }
 
+        public void PreOrder()
+        {
+            PreOrder(root);
+            Console.WriteLine();
+        }
+
         private void PreOrder(Node<T> root)
         {
             if (root != null)
             {
                 Console.Write($"{root.key},");
-                InOrder(root.left);
-                InOrder(root.right);
+                PreOrder(root.left);
+                PreOrder(root.right);
             }
+        }
+
+        public void PostOrder()
+        {
+            PostOrder(root);
+            Console.WriteLine();
         }
 
         private void PostOrder(Node<T> root)
         {
             if (root != null)
             {
-                InOrder(root.left);
-                InOrder(root.right);
+                PostOrder(root.left);
+                PostOrder(root.right);
                 Console.Write($"{root.key},");
             }
         }
@@ -152,9 +156,10 @@ namespace _12_March_2019_BinarySearchTree
         public void LevelOrder()
         {
             LevelOrder(root);
+            Console.WriteLine();
         }
 
-        static void LevelOrder(Node<T> root)
+        private void LevelOrder(Node<T> root)
         {
             int level = 0;
             int height = GetHeight(root);
