@@ -46,7 +46,5 @@ namespace _12_March_2019_BinarySearchTree
             else
                 return -1;
         }
-
-        
     }
 }

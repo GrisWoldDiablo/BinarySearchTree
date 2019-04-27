@@ -78,52 +78,42 @@ namespace _12_March_2019_BinarySearchTree
             //Console.WriteLine();
 
             var myRBTree = new RBT<int>();
-            myRBTree.InsertValue(32);
-            myRBTree.InsertValue(31);
-            myRBTree.InsertValue(30);
-            myRBTree.InsertValue(20);
-            myRBTree.InsertValue(15);
-            myRBTree.InsertValue(10);
+            myRBTree.InsertValue(7);
+            myRBTree.InsertValue(6);
             myRBTree.InsertValue(5);
             myRBTree.InsertValue(4);
+            myRBTree.InsertValue(3);
             myRBTree.InsertValue(2);
             myRBTree.InsertValue(1);
-            myRBTree.InOrder();
             myRBTree.LevelOrder();
-            myRBTree.PreOrder();
-            myRBTree.PostOrder();
-            myRBTree = new RBT<int>();
-            var myBSTree = new BST<int>();
-            int h = rand.Next(10, 20);
-            for (int i = 0; i < 50; i++)
-            {
-                int v = rand.Next(100);
-                myRBTree.InsertValue(v);
-                myBSTree.InsertValue(v);
-                Console.Write($"{v}, ");
-            }
-            Console.WriteLine();
-            Console.WriteLine("RBT");
+            
+            Console.WriteLine(myRBTree.Search(4).GetSuccessor());
 
-            myRBTree.InOrder();
-            myRBTree.LevelOrder();
-            myRBTree.PreOrder();
-            myRBTree.PostOrder();
-            Console.WriteLine("BST");
-            myBSTree.LevelOrder();
-            myBSTree.PreOrder();
-            myBSTree.PostOrder();
-        }
+            //    myRBTree = new RBT<int>();
+            //    var myBSTree = new BST<int>();
+            //    int h = rand.Next(10, 20);
+            //    for (int i = 0; i < 50; i++)
+            //    {
+            //        int v = rand.Next(100);
+            //        myRBTree.InsertValue(i);
+            //        myBSTree.InsertValue(i);
+            //        Console.Write($"{i}, ");
+            //    }
 
-        private static void Shuffle(List<int> numbers)
-        {
-            for (int i = 0; i < numbers.Count; i++)
-            {
-                int j = rand.Next(0, i + 1);
-                var temp = numbers[i];
-                numbers[i] = numbers[j];
-                numbers[j] = temp;
-            }
+
+
+
         }
-    }
-}
+        //private static void Shuffle(List<int> numbers)
+        //{
+        //    for (int i = 0; i < numbers.Count; i++)
+        //    {
+        //        int j = rand.Next(0, i + 1);
+        //        var temp = numbers[i];
+        //        numbers[i] = numbers[j];
+        //        numbers[j] = temp;
+        //    }
+        //}
+
+    }// class
+}// namespace

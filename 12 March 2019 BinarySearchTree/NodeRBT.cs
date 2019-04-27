@@ -15,9 +15,7 @@ namespace _12_March_2019_BinarySearchTree
         public Color color;
         public NodeRBT<T> left;
         public NodeRBT<T> right;
-        public NodeRBT<T> p;
-        public NodeRBT<T> gp;
-        public NodeRBT<T> u;
+        public NodeRBT<T> p;    
 
         public NodeRBT()
         {
@@ -27,6 +25,31 @@ namespace _12_March_2019_BinarySearchTree
         public NodeRBT(T k)
         {
             key = k;
+        }
+
+        public override string ToString()
+        {
+            if (this == RBT<T>.nil)
+            {
+                return "@";
+            }
+            return key.ToString();
+        }
+        
+        public NodeRBT<T> GetSuccessor()
+        {
+            NodeRBT<T> x = this;
+            if (x.right != RBT<T>.nil)
+            {
+                return RBT<T>.GetMinNode(x.right);
+            }
+            NodeRBT<T> y = x.p;
+            while (y != RBT<T>.nil && x == y.right)
+            {
+                x = y;
+                y = y.p;
+            }
+            return y;
         }
     }
 }
