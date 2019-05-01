@@ -303,7 +303,7 @@ namespace _12_March_2019_BinarySearchTree
                         currentLevel = level;
                         Console.WriteLine();
                     }
-                    Console.Write($"{node.key}:L:{level}({node.left},{node.right}),");
+                    Console.Write($"{(node.color == Color.RED?"[":"(")}{node.key}{(node.color == Color.RED ? "]" : ")")}:L:{level}({node.left},{node.right}),");
 
                     // enqueue child elements from next level in order
                     if (node.left != nil/* tree has non-empty left subtree*/ )

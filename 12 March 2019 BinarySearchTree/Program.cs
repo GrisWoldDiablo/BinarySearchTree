@@ -78,30 +78,17 @@ namespace _12_March_2019_BinarySearchTree
             //Console.WriteLine();
 
             var myRBTree = new RBT<int>();
-            myRBTree.InsertValue(7);
-            myRBTree.InsertValue(6);
-            myRBTree.InsertValue(5);
-            myRBTree.InsertValue(4);
-            myRBTree.InsertValue(3);
-            myRBTree.InsertValue(2);
             myRBTree.InsertValue(1);
+            myRBTree.InsertValue(6);
+            myRBTree.InsertValue(4);
+            myRBTree.InsertValue(7);
+            myRBTree.InsertValue(2);
+            myRBTree.InsertValue(5);
+            myRBTree.InsertValue(3);
+            myRBTree.InsertValue(9);
             myRBTree.LevelOrder();
             
-            Console.WriteLine(myRBTree.Search(4).GetSuccessor());
-
-            //    myRBTree = new RBT<int>();
-            //    var myBSTree = new BST<int>();
-            //    int h = rand.Next(10, 20);
-            //    for (int i = 0; i < 50; i++)
-            //    {
-            //        int v = rand.Next(100);
-            //        myRBTree.InsertValue(i);
-            //        myBSTree.InsertValue(i);
-            //        Console.Write($"{i}, ");
-            //    }
-
-
-
+            //Console.WriteLine(myRBTree.Search(4).GetSuccessor());
 
         }
         //private static void Shuffle(List<int> numbers)
